@@ -1,0 +1,46 @@
+<view class='ui-cells-title'>管理我的觅食处，左滑可删除</view>
+<view class='ui-cells'>
+    <delete-list config-list="{{configList}}" bind:deleteItem="onDeleteItem" wx:if='{{coordinates.length}}'>
+        <view wx:for='{{coordinates}}' wx:key='id' slot='{{item.id}}'>
+            <view class='ui-cell coordinate-item' bindtap='coordinateControl' hover-class='none' data-id='{{item.id}}'>
+                <view class='ui-cell-head'>
+                    <image src='../../icons/marker.png'></image>
+                </view>
+                <view class='ui-cell-body'>{{item.name}}</view>
+                <view class='ui-cell-foot-in-access'></view>
+            </view>
+        </view>
+    </delete-list>
+    <view class='ui-cell coordinate-item' hover-class='ui-active' bindtap='newCoordinate'>
+        <view class='ui-cell-body'>新的觅食处</view>
+        <view class='ui-cell-foot-in-access'></view>
+    </view>
+</view>
+
+<view class='ui-cells-title'>切换显示图片</view>
+<view class='ui-cells'>
+    <view class='ui-cell'>
+        <view class='ui-cell-body'>
+            <view class='image-block-wrap'>
+                <view wx:for='{{imageList}}' wx:key='*this' class='image-block-box'> 
+                    <image src='{{item}}' class='image-block' mode='aspectFill' bindtap='chooseImage' data-index='{{index}}'>
+                        <view class='image-block-mask' hidden='{{chooseIndex!=index}}'>
+                            <icon type='success_no_circle' size='50' color='#fff'></icon>
+                        </view>
+                    </image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+
+<view class='ui-cells-title'>总体设置</view>
+<view class='ui-cells'>
+    <view class='ui-cell' hover-class='ui-active' bindtap='informationManage'>
+        <view class='ui-cell-body'>信息管理</view>
+        <view class='ui-cell-foot-in-access'></view>
+    </view>
+</view>
+
+<button class='button swtich'  bindtap='mapSwitch'>使用当前地图</button>
+<button class='button' type="warn" bindtap='deleteMap'>删除本地图</button>

@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+      "map-item": "../../Components/map-item/map-item",
+      "coordinate-item": "../../Components/coordinate-item/coordinate-item",
+      "search-bar": "../../Components/search-bar/search-bar"
+    }
+}

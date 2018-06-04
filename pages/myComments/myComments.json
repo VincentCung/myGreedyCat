@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "我的评论",
+    "usingComponents": {
+        "delete-list": "../../Components/delete-list/delete-list",
+        "comment-item": "../../Components/comment-item/comment-item"
+    }
+}

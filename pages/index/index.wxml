@@ -1,0 +1,54 @@
+<view class="header">
+    <view class="slogan slogan-big">寻寻觅觅</view>
+    <view class="slogan slogan-small">只为找到你最爱吃的</view>
+    <view class="search-bar-box">
+        <navigator class="city-box" opte-type="navigate" url="/pages/chooseCity/chooseCity" hover-class="none">
+            <view class="city-arrow"></view>
+            <view class="city-text">{{city}}</view>
+        </navigator>
+        <view class="search-bar" bind:confirm="searchInput">
+            <search-bar input-val='{{keyword}}' input-showed='{{inputShowed}}'></search-bar>
+        </view>
+    </view>
+</view>
+<view class="category-box">
+    <navigator wx:for="{{categories}}" class="category-single" wx:key="name" url='{{item.url || "../resultList/resultList?category="+ item.name +"&locality=" + city }}' open-type='navigate' hover-class='none'>
+        <image class="category-image" src="{{item.imageSrc}}" />
+        <view class="category-text">{{item.name}}</view>
+    </navigator>
+</view>
+<swiper indicator-dots="true" autoplay="true" circular='true' style="height:200rpx">
+    <swiper-item wx:for="{{imageUrls}}" wx:key="*this">
+        <image src="{{item}}" style="width:750rpx;height:200rpx" mode="aspectFit"/>
+    </swiper-item>
+</swiper>
+<view class="tab">
+    <view class="navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+            <view data-index="{{index}}" class="navbar-item {{activeIndex == index ? 'navbar-item-on' : ''}}" bindtap="tabClick">
+                <view class="navbar-title">{{item}}</view>
+            </view>
+        </block>
+        <view class="navbar-slider" style="transform: translateX({{sliderOffset}}px);"></view>
+    </view>
+    <view class="tab-content">
+        <view class="tab-content-list" hidden="{{activeIndex != 0}}">
+            <navigator wx:for="{{likeList}}" wx:key="mapid"  url='{{"../mapDetail/mapDetail?mapid="+item.mapid}}'>
+                <map-item item-detail="{{item}}" />
+            </navigator>
+            <view wx:if='{{likeIsEnd}}' class='end-tip'>猫咪真的找不到了~</view>
+        </view>
+        <view class="tab-content-list" hidden="{{activeIndex != 1}}">
+            <navigator wx:for="{{timeList}}" wx:key="mapid"  url='{{"../mapDetail/mapDetail?mapid="+item.mapid}}'>
+                <map-item item-detail="{{item}}" />
+            </navigator>
+            <view wx:if='{{timeIsEnd}}' class='end-tip'>猫咪真的找不到了~</view>
+        </view>
+        <view class="tab-content-list" hidden="{{activeIndex != 2}}">
+            <navigator wx:for="{{hotList}}" wx:key="mapid"  url='{{"../mapDetail/mapDetail?mapid="+item.mapid}}'>
+                <map-item item-detail="{{item}}" />
+            </navigator>
+            <view wx:if='{{hotIsEnd}}' class='end-tip'>猫咪真的找不到了~</view>
+        </view>
+    </view>
+</view>

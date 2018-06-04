@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "我的地图迷路了",
+    "usingComponents": {
+        "delete-list": "../../Components/delete-list/delete-list",
+        "modal": "../../Components/modal/modal"
+    }
+
+}

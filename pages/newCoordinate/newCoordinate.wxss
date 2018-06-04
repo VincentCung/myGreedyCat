@@ -1,0 +1,10 @@
+/* pages/newCoordinate/newCoordinate.wxss */
+
+
+/*----------------------------------btn-----------------------------------------------*/
+.ui-btn-area{
+    padding: 1.17647059em 15px 1em;
+}
+.ui-btn{
+    background-color: #EB6159 !important;
+}

@@ -1,0 +1,8 @@
+{
+  "usingComponents":{
+    "search-bar":"../../Components/search-bar/search-bar",
+    "map-item": "../../Components/map-item/map-item",
+    "modal": "../../Components/modal/modal"
+  },
+  "enablePullDownRefresh":true
+}

@@ -1,0 +1,28 @@
+<!--pages/chooseCity/chooseCity.wxml-->
+<scroll-view style="height:{{systemInfo.windowHeight}}px;" scroll-into-view="{{toID}}" scroll-y="true" >
+  <view class="page-body">
+    <view class="hot-city-box" id="hot">
+      <view class="box-title">
+        <image class="title-icon" src="../../icons/hot.png" />
+        <view class="title-text">热门城市</view>
+      </view>
+      <view class="city-items">
+        <view class="city-item" wx:for="{{hotCity}}" wx:key="*this" data-city='{{item}}' bindtap="chooseCity">{{item}}</view>
+      </view>
+    </view>
+    <view class="city-list">
+      <view wx:for="{{cityList}}" wx:key="name" wx:for-item="list" class="city-cells">
+        <view class="city-cell-title" id="{{list.name}}">{{list.name}}</view>
+        <view wx:for="{{list.list}}" wx:key="*this" class="ui-cell city-cell">
+          <view class="field" bindtap="chooseCity" data-city='{{item}}'>
+            {{item}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="right-bar" >
+    <image class="bar-cell" src="../../icons/hot.png" bindtap="scrollTo"  data-choice="hot"/>
+    <view wx:for="{{cityList}}" class="bar-cell" wx:key="name" bindtap="scrollTo" data-choice="{{item.name}}" >{{item.name}}</view>
+  </view>
+</scroll-view>

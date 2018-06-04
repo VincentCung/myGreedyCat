@@ -1,0 +1,109 @@
+/* pages/homePage/homePage.wxss */
+
+.avatar, .nickname {
+    display: flex;
+    justify-content: space-around;
+    background-color: #eb6159;
+}
+
+.nickname {
+    color: white;
+    padding: 20rpx 0 20rpx 0;
+}
+
+.avatar-image {
+    margin-top: 8px;
+    height: 180rpx;
+    width: 180rpx;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.icon-wrap {
+    display: flex;
+    justify-content: space-around;
+    background-color: whitesmoke;
+}
+
+.icon-image {
+    height: 160rpx;
+    width: 160rpx;
+    margin: 16rpx 0;
+}
+
+.icon {
+    display: flex;
+    flex-direction: column;
+}
+
+.icon-num {
+    text-align: center;
+    color: #eb6159;
+}
+
+.hr {
+    margin-top: 10rpx;
+}
+
+/*---------------------------------- modal--------------------------------------- */
+
+.modal-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+    width: 400rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.inner-close {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+}
+
+.inner-image {
+    width: 350rpx;
+    height: 350rpx;
+}
+
+.icon {
+    width: 33%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon::before {
+    content: " ";
+    position: absolute;
+    height: 80%;
+    left: 0;
+    top:10%;
+    border-left: 1rpx solid #d9d9d9;
+
+}
+
+.icon:first-child::before {
+    display: none;
+}
+
+
+.inner-button {
+    width: 90%;
+    box-sizing: border-box;
+    font-size: 18px;
+    background-color: #eb6159;
+    margin: 0;
+    color: #fff;
+}
+
+.inner-text {
+    text-align: center;
+    font-size:  14px;
+    color: #888;
+    padding: 8px 0 15px 0;
+}

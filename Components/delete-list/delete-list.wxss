@@ -1,0 +1,22 @@
+/* Components/delete-list/delete-list.wxss */
+.list-wrap {
+    overflow: hidden;
+}
+
+.item{
+    position: relative;
+    transition:left .7s ;
+}
+.btn-delete{
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    right: -100px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e64340;
+}
+

@@ -1,0 +1,16 @@
+<view hidden='{{modalHidden}}'>
+    <view class='modal-mask' bindtap='{{lockMask? "": "modalClickHidden"}}' catchtouchmove='preventTouch' style='opacity:{{opacity}} '/>
+    <view class='modal-box' style='top:{{top}}%;width:{{width}}rpx;left:{{(750-width)/2}}rpx'>
+        <view wx:if="{{!costume}}">
+            <view class="title">{{modalTitle}}</view>
+            <view class='content'>{{modalContent}}</view>
+            <view class='btn'>
+                <view bindtap='cancel' class='cancel'>取消</view>
+                <view bindtap='confirm' class='confirm'>确定</view>
+            </view>
+        </view>
+        <view wx:else>
+            <slot></slot>
+        </view>
+    </view>
+</view>

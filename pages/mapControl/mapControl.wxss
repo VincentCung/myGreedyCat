@@ -1,0 +1,62 @@
+/* pages/mapControl/mapControl.wxss */
+
+.button {
+    margin: 15px 15px 0 15px;
+}
+
+.coordinate-item {
+    border-top: 1rpx solid #d9d9d9;
+}
+
+.coordinate-item::before {
+    display: none;
+}
+
+/*-----------------------------------image-block----------------*/
+
+.image-block-wrap {
+    display: flex;
+    align-items: center;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+
+.image-block-box {
+    flex-grow: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.image-block {
+    width: 200rpx;
+    height: 200rpx;
+    position: relative;
+}
+
+.image-block-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+    left:0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swtich {
+    color: #E64340;
+    background-color: #fff;
+    border: 1px solid #E64340;
+}
+
+.swtich::after , .swtich::before {
+    display: none;
+}

@@ -1,0 +1,50 @@
+/* Components/comment-item/comment-item.wxss */
+
+.comment-item-box {
+    padding: 8px 10px;
+    border-bottom: 1rpx solid #d9d9d9;
+    display: flex;
+    background-color: #fff;
+}
+
+.comment-item-image {
+    width: 200rpx;
+    height: 200rpx;
+}
+
+.comment-item-right-part {
+    flex: 1;
+    margin-left: 36rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-to {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.comment-content {
+    margin: 10rpx 0;
+    height: 54px;
+    width: 100%;
+    color: #353535;
+    font-size: 14px;
+    word-break: break-all;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 18px;
+    -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+}
+
+.comment-footer {
+    font-size: 14px;
+    color: #eb6159;
+    display: flex;
+}
+
+.footer-left {
+    flex: 1;
+}

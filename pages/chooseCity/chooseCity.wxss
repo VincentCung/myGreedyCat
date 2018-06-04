@@ -1,0 +1,95 @@
+/* pages/chooseCity/chooseCity.wxss */
+.page-body {
+  padding-bottom:150px; 
+}
+
+
+.hot-city-box {
+  padding: 20rpx 15px;
+  margin-right: 100rpx;
+  border-bottom: 1rpx solid #d9d9d9;
+  box-sizing: border-box;
+}
+
+.box-title {
+  color:#999;
+  display: flex;
+  align-items: flex-end;
+}
+
+.title-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.city-items {
+  display: flex;
+  margin-top:20rpx;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.city-item {
+  padding:10rpx 50rpx;
+  margin:10rpx 0;
+  border-radius: 8%;
+  font-size: 14px;
+  text-align: center;
+  border: 1rpx solid #d9d9d9;
+  background-color: #fff;
+}
+
+.city-cells {
+  position: relative;
+}
+
+.city-cells:after {
+  content: " ";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  width: 620rpx;
+  left: 15px;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+
+.city-cell-title {
+  padding: 8px 15px;
+  font-size:14px;
+  font-weight: 400;
+}
+
+.city-cell {
+  background-color: #fff;
+  padding: 0 0;
+}
+
+.city-cell:before {
+  width:620rpx;
+}
+
+.field {
+  width: 500rpx;
+  padding: 10px 15px;
+}
+
+.right-bar {
+  position: fixed;
+  right: 0;
+  top:100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bar-cell {
+  text-align: center;
+  padding:0 13px  ;
+  width:20px;
+  height:20px;
+  line-height: 20px;
+  font-size:15px;
+}
+

@@ -1,0 +1,6 @@
+<view class="ui-grids">
+    <navigator class="ui-grid" hover-class="none" wx:for="{{categories}}" wx:key="name" open-type='navigateTo' url='{{"../resultList/resultList?category="+item.name+"&locality=" + city}}'>
+        <image src="{{item.imageSrc}}" class='ui-grid-icon'></image>
+        <view class="ui-grid-label">{{item.name}}</view>
+    </navigator>
+</view>

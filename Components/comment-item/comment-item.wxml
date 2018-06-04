@@ -1,0 +1,12 @@
+<!--Components/map-item/comment-item.wxml-->
+<view class="comment-item-box">
+    <image class="comment-item-image" src="{{itemDetail.main_image_url||'../../icons/lost.png'}}" mode="aspectFit"></image>
+    <view class="comment-item-right-part">
+        <view class="comment-to">{{'To: '+itemDetail.map_name}}</view>
+        <view class="comment-content">{{itemDetail.content}}</view>
+        <view class="comment-footer">
+            <view class="footer-left">{{'匿名：'+(itemDetail.is_public?'否':'是')}}</view>
+            <view class="footer-right">{{itemDetail.city+' '+itemDetail.locality}}</view>
+        </view>
+    </view>
+</view>

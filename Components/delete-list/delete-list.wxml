@@ -1,0 +1,6 @@
+<view class='list-wrap'>
+    <view class='item' wx:for="{{configList}}" wx:key="itemId" bindtouchstart='ontouchStart' bindtouchend='ontouchEnd' style='left:{{item.leftDistance}}px' data-index='{{index}}'>
+        <slot name='{{item.itemId}}'></slot>
+        <view class='btn-delete' data-index="{{index}}" bindtap='onDelete'>删除</view>
+    </view>
+</view>

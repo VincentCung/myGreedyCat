@@ -1,0 +1,69 @@
+<!--pages/newCoordinate/newCoordinate.wxml-->
+
+<form bindsubmit='formSubmit'>
+    <view class="ui-cells-title">{{id?' ':'默认为当前坐标'}}</view>
+    <view class='ui-cells'>
+        <view class='ui-cell' hover-class='ui-active' bindtap='chooseCoordinate'>
+            <view class='ui-cell-body'>{{id?'更改觅食点':'选择觅食点'}}</view>
+            <view class='ui-cell-foot-in-access'></view>
+        </view>
+        <view class="ui-cell ui-cell-select">
+            <view class="ui-cell-body">
+                <picker bindchange="bindCategoryChange" value="{{categoryIndex}}" range="{{categories}}" name='categoryIndex'>
+                    <view class="ui-select">{{categories[categoryIndex]}}</view>
+                </picker>
+            </view>
+        </view>
+    </view>
+
+        <view class="ui-cells-title">地点名</view>
+        <view class="ui-cells ">
+            <view class="ui-cell ui-cell-input">
+                <input name="name" class="ui-input" maxlength="10" placeholder="最大输入长度为10" value='{{name}}' />
+            </view>
+        </view>
+
+
+
+
+
+
+        <view class="ui-cells-title">详细地址</view>
+        <view class="ui-cells ">
+            <view class="ui-cell ui-cell-input">
+                <input name="address" class="ui-input" maxlength="30" placeholder="最大输入长度为30" value='{{address}}' />
+            </view>
+        </view>
+
+
+        <view class="ui-cells-title">简介</view>
+        <view class='ui-cells'>
+            <view class='ui-cell'>
+                <view class="ui-cell-body">
+                    <textarea name="description" placeholder='写下你的描述' auto-focus="true" style="height: 200rpx" maxlength="{{textareaMaxLen}}" bindinput="bindTextAreaChange" maxlength='{{textareaMaxLen}}' adjust-position="true" class='ui-textarea' value='{{description}}'
+                    />
+                    <view class='ui-textarea-counter'>{{textareaLen}}/{{textareaMaxLen}}</view>
+                </view>
+            </view>
+        </view>
+
+
+        <view class='ui-cells-title'>图片上传 {{imagePath?1:0}}/1</view>
+        <view class='ui-cells'>
+            <view class='ui-cell'>
+                <view class='ui-cell-body'>
+                    <view class="ui-uploader-img-wrap" bindtap="chooseImage" hidden='{{!imagePath}}'>
+                        <image class="ui-uploader-img" src="{{imagePath}}" mode="aspectFit" />
+                    </view>
+                    <view class='ui-uploader-input-box' bindtap="chooseImage" hidden='{{imagePath}}'>
+                        <view class='ui-uploader-input'></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+
+        <view class='ui-btn-area'>
+            <button type="primary" formType="submit" class='ui-btn'>{{id?'更改':'添加'}}</button>
+        </view>
+
+</form>

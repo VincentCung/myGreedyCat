@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "管理我的地图",
+    "usingComponents": {
+        "delete-list": "../../Components/delete-list/delete-list"
+    }
+}

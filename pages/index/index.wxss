@@ -1,0 +1,164 @@
+/**index.wxss**/
+
+/*------------------------------header----------------------------------------------*/
+
+.header {
+  background-color: #eb6159;
+}
+
+.slogan {
+  text-align: center;
+  color: #fff;
+}
+
+.slogan-small {
+  font-size: 17px;
+  padding-top: 8px;
+}
+
+.slogan-big {
+  font-size: 20px;
+}
+
+.search-bar-box {
+  display: flex;
+}
+
+.search-bar {
+  flex: 1;
+}
+
+.city-box {
+  padding: 10px 0 10px 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.city-arrow {
+  padding-right: 13px;
+  position: relative;
+}
+
+.city-arrow:after {
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 0 2px 2px 0;
+  border-color: #fff;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 2px;
+}
+
+.city-text {
+  box-sizing: border-box;
+  padding-left: 4px;
+  flex: 1;
+  color: #fff;
+  font-size:16px;
+}
+
+/*----------------------------------category------------------------------------------*/
+
+.category-box {
+  display: flex;
+}
+
+.category-single {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.category-image {
+  border-radius: 50%;
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.category-text {
+  margin-top: 20rpx;
+  font-size: 12px;
+  text-align: center;
+  color: #888;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+/*---------------------------------tab-------------------------------------*/
+
+.tab {
+  margin-top: 5px;
+  position: relative;
+  height: 100%;
+  
+}
+
+.navbar {
+  display: flex;
+  position: absolute;
+  z-index: 500;
+  top: 0;
+  width: 100%;
+  border-bottom: 1rpx solid #ccc;
+  background-color: #fff;
+}
+
+.navbar-item {
+  position: relative;
+  display: block;
+  flex: 1;
+  padding: 13px 0;
+  text-align: center;
+  font-size: 0;
+}
+
+.navbar-item-on {
+  color: #eb6159;
+}
+
+.navbar-slider {
+  position: absolute;
+  left: 35rpx;
+  content: " ";
+  bottom: 0;
+  width: 180rpx;
+  height: 3px;
+  background-color: #eb6159;
+  transition: transform 0.3s;
+}
+
+.navbar-title {
+  display: inline-block;
+  font-size: 15px;
+  max-width: 8em;
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+.tab-content {
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 50px;
+  overflow: auto;
+}
+
+
+.end-tip {
+    text-align: center;
+    padding: 8px 0 20px 0;
+    font-size:14px;
+    color:#888;
+}

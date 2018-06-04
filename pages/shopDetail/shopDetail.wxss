@@ -1,0 +1,8 @@
+/* pages/shopDetail/shopDetail.wxss */
+.shop-img{
+    width: 750rpx;
+    height: 750rpx;
+}
+.text{
+    padding: 20rpx 30rpx;
+}

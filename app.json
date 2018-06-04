@@ -1,0 +1,52 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/shopDetail/shopDetail",
+        "pages/newCoordinate/newCoordinate",
+        "pages/myMapDetail/myMapDetail",
+        "pages/myMaps/myMaps",
+        "pages/mapDetail/mapDetail",
+        "pages/categories/categories",
+        "pages/newMap/newMap",
+        "pages/homePage/homePage",
+        "pages/resultList/resultList",
+        "pages/chooseCity/chooseCity",
+        "pages/myComments/myComments",
+        "pages/comment/comment",
+        "pages/help/help",
+        "pages/mapControl/mapControl"
+    ],
+    "window": {
+        "backgroundColor": "#EB6159",
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#EB6159",
+        "navigationBarTitleText": "为食黑猫",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "color": "#7A7E83",
+        "selectedColor": "#EB6159",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "觅食",
+                "iconPath": "icons/tabbar/index.png",
+                "selectedIconPath": "icons/tabbar/index_selected.png"
+            },
+            {
+                "pagePath": "pages/myMapDetail/myMapDetail",
+                "text": "地图",
+                "iconPath": "icons/tabbar/map.png",
+                "selectedIconPath": "icons/tabbar/map_selected.png"
+            },
+            {
+                "pagePath": "pages/homePage/homePage",
+                "text": "我的",
+                "iconPath": "icons/tabbar/homepage.png",
+                "selectedIconPath": "icons/tabbar/homepage_selected.png"
+            }
+        ]
+    }
+}

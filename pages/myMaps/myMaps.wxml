@@ -1,0 +1,25 @@
+<view wx:if='{{!lockDelete}}'>
+    <view wx:if='{{configList.length}}'>
+        <view class='tip'>左滑可删除</view>
+        <delete-list config-list="{{configList}}" bind:deleteItem="onDeleteItem" bind:tapItem="onTapItem">
+            <view wx:for='{{mapList}}' wx:key='mapid' slot='{{item.mapid}}'>
+                <map-item item-detail="{{item}}" bindtap='onTap' data-id='{{item.mapid}}' />
+            </view>
+        </delete-list>
+    </view>
+    <view wx:else class='lost-wrap'>
+        <image class='lost-image' src='../../icons/404.png'></image>
+        <view class='lost-text'>猫咪什么都没找到，快去发现吧..</view>
+    </view>
+
+</view>
+
+<view wx:else>
+    <view wx:for='{{mapList}}' wx:key='mapid'>
+        <map-item item-detail="{{item}}" bindtap='chooseMap' data-id='{{item.mapid}}' />
+    </view>
+</view>
+
+<navigator wx:if='{{choice==0&&!lockDelete}}' class='add-btn-box' url='/pages/newMap/newMap' open-type='navigateTo'>
+    <image src='../../icons/ui/add.png' class='add-btn'></image>
+</navigator>

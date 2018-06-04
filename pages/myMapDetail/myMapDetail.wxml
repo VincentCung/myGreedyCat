@@ -1,0 +1,91 @@
+<!--pages/myMapDetail/myMapDetail.wxml-->
+<view wx:if='{{mapid!=null}}' class="page-body">
+    <view class='map-warp'>
+        <map id='myMap' latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}"  show-location bindcallouttap='calloutToDetail' controls="{{controls}}" bindcontroltap='lockLocation'>
+        </map>
+    </view>
+    <view class='icon-wrap'>
+        <view wx:for="{{icons}}" wx:for-item="icon" class='icon' wx:key='name'>
+            <image src="{{icon.imageUrl}} " class="icon-image" data-index='{{index}}'></image>
+            <view class='icon-num'>{{icon.num}}</view>
+        </view>
+    </view>
+    <view class='description-wrap ui-cells'>
+        <view class="description-locality">{{city+' '+locality}}</view>
+        <view class='description'>
+            <text>{{description}}</text>
+        </view>
+        <view class='authorName'>
+            <text>--  {{author.nickName}}</text>
+        </view>
+    </view>
+    <view class='markers-wrap'>
+        <view class='ui-title-box'>
+            <view class='ui-title-text'>我的觅食处</view>
+        </view>
+        <view wx:if='{{markers.length}}'>
+            <view class='ui-cells'>
+                <delete-list config-list="{{configList}}" bind:deleteItem="onDeleteItem">
+                    <view wx:for='{{markers}}' wx:key='id' slot='{{item.id}}'>
+                        <view class='ui-cell marker-item' bindtap='navigateToDetail' hover-class='none' data-id='{{item.id}}'>
+                            <view class='ui-cell-head'>
+                                <image src='../../icons/marker.png'></image>
+                            </view>
+                            <view class='ui-cell-body'>{{item.title}}</view>
+                            <view class='ui-cell-foot-in-access'></view>
+                        </view>
+                    </view>
+                </delete-list>
+            </view>
+            <view class='marker-tip' hidden='{{!configList.length}}'>左滑删除</view>
+
+        </view>
+
+    </view>
+    <view class='comment-wrap'>
+        <view class='ui-title-box'>
+            <view class='ui-title-text'>用户评论
+                <image class='comment-title-image' src='../../icons/ui/comment.png'></image>
+            </view>
+        </view>
+        <view class='comment-item' wx:for="{{comments}}" wx:for-item="comment" wx:key='id'>
+            <view class='comment-head'>
+                <image src='{{comment.simple_user_info.avatarUrl}}' class='comment-avatar'></image>
+                <view class='comment-userName'>
+                    {{comment.simple_user_info.nickName}}
+                </view>
+            </view>
+            <view class='comment-body'>
+                {{comment.content}}
+            </view>
+        </view>
+    </view>
+
+    <view class='menu-wrap'>
+        <view class="menu-items">
+            <navigator class='menu-item' wx:for="{{menuItems}}" style="top:{{isMenuActive?item.topDistance:-60}}rpx ;opacity:{{isMenuActive?'1':'0;display:hidden'}}" wx:key='name' hover-class='none' url='{{item.linkUrl}}' open-type='navigateTo'>
+                <image class='menu-item-icon' src='{{item.iconPath}}'></image>
+                <view class='menu-item-text'>
+                    {{item.name}}
+                </view>
+            </navigator>
+        </view>
+        <view class='menu-btn-box' bindtap='menuTap'>
+            <image src='../../icons/ui/add.png' class='menu-btn' style="transition: all .3s;transform:rotate({{isMenuActive?'-225deg':'0'}})"></image>
+        </view>
+    </view>
+</view>
+
+<view wx:else class='lost-wrap'>
+    <image class='lost-image' src='../../icons/404.png'></image>
+    <view class='lost-text'>猫咪还没有觅食地图呢..</view>
+    <navigator hover-class='none' class='lost-btn' url='/pages/myMaps/myMaps?choice=0'>去我的地图里找找吧</navigator>
+</view>
+
+<modal modal-hidden="{{modalHidden}}" animation="true" costume="true" width='400' lock-mask='true'>
+    <view class="modal-inner">
+        <image class='inner-image' src='../../icons/lost.png'></image>
+        <view class="inner-text">猫咪找不着路了..</view>
+        <button class='inner-button' open-type='getUserInfo' bindgetuserinfo='confirmAuthory'>求求你授权吧</button>
+    </view>
+</modal>

@@ -1,0 +1,13 @@
+<view wx:if='{{configList.length}}'>
+    <view class='tip'>左滑可删除</view>
+    <delete-list config-list="{{configList}}" bind:deleteItem="onDeleteItem">
+        <view wx:for='{{commentList}}' wx:key='id' slot='{{item.id}}'>
+            <comment-item item-detail="{{item}}" />
+        </view>
+    </delete-list>
+</view>
+
+<view wx:else class='lost-wrap'>
+    <image class='lost-image' src='../../icons/404.png'></image>
+    <view class='lost-text'>猫咪什么都没找到，快去评论吧..</view>
+</view>

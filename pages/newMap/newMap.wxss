@@ -1,0 +1,49 @@
+/* pages/newMap/newMap.wxss */
+
+.picker{
+  padding: 19rpx 26rpx;
+  background-color: #FFFFFF;
+}
+.ui-label{
+    padding-right: 30rpx
+}
+
+.textarea-wrp {
+    padding:20rpx 30rpx;
+    background-color:#fff;
+}
+.textarea-len{
+    background-color: white;
+    padding: 20rpx 30rpx;
+    text-align: right;
+    color: #999;
+}
+.ui-btn{
+    background-color: #EB6159 !important;
+}
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+    padding:0 30rpx
+}
+.tag{
+    display: inline-block;
+    padding: 6rpx 12rpx;
+    border-radius: 26rpx;
+    margin: 8rpx;
+    background-color: #FFFFFF;
+    color: #EB6159;
+    border: 2rpx solid;
+    font-size:16px;
+}
+.tag-isChoosed{
+    background-color: #EB6159;
+    color: white;
+}
+.switch-wrap{
+    margin: 20rpx 0
+}
+.ui-btn-area{
+    padding: 1.17647059em 15px 1em;
+}
+

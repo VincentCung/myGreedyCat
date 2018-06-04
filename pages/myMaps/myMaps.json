@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "我的地图",
+    "usingComponents": {
+        "map-item": "../../Components/map-item/map-item",
+        "delete-list": "../../Components/delete-list/delete-list"
+    }
+}

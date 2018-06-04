@@ -1,0 +1,79 @@
+/* pages/resultList/resultList.wxss */
+
+
+
+.tab {
+  margin-top: 5px;
+  position: relative;
+  height: 100%;
+  
+}
+
+.navbar {
+  display: flex;
+  position: absolute;
+  z-index: 500;
+  top: 0;
+  width: 100%;
+  border-bottom: 1rpx solid #ccc;
+  background-color: #fff;
+}
+
+.navbar-item {
+  position: relative;
+  display: block;
+  flex: 1;
+  padding: 13px 0;
+  text-align: center;
+  font-size: 0;
+}
+
+.navbar-item-on {
+  color: #eb6159;
+}
+
+.navbar-slider {
+  position: absolute;
+  content: " ";
+  bottom: 0;
+  width: 180rpx;
+  height: 3px;
+  background-color: #eb6159;
+  transition: transform 0.3s;
+}
+
+.navbar-title {
+  display: inline-block;
+  font-size: 15px;
+  max-width: 8em;
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+
+.tab-content {
+  box-sizing: border-box;
+  height: 100%;
+  padding-top: 50px;
+  overflow: auto;
+}
+
+.not-found-box {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.not-found-image {
+  height:500rpx;
+  width:500rpx;
+}
+
+
+.end-tip {
+    text-align: center;
+    padding: 8px 0 20px 0;
+    font-size:14px;
+    color:#888;
+}

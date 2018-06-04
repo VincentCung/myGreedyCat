@@ -1,0 +1,17 @@
+<!--Components/map-item/map-item.wxml-->
+ <view class="map-item-box">
+  <image class="map-item-image" src="{{itemDetail.main_image_url||'../../icons/lost.png'}}" mode="aspectFit"></image>
+  <view class="map-item-right-part">
+    <view class="map-name-box">
+      <view class="map-name-head">{{itemDetail.map_name}}</view>
+      <view class="map-name-foot">{{itemDetail.city+" "+itemDetail.locality}}</view>
+    </view>
+    <view class="map-description">{{itemDetail.description}}</view>
+    <view class="map-counters-box">
+      <view class="counter-box" wx:for="{{counters}}" wx:key="name">
+        <image class="counter-icon" src="{{item.imgUrl}}"></image>
+        <view class="counter-number"> {{item.num}}</view>
+      </view>
+    </view>
+  </view>
+</view> 

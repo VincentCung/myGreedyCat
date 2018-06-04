@@ -1,0 +1,10 @@
+/* pages/comment/comment.wxss */
+.switch-wrap {
+    margin-top: 15px;
+}
+.ui-btn-area{
+    margin: 1.17647059em 15px 1em;
+}
+.ui-btn{
+    background-color: #EB6159 !important;
+}

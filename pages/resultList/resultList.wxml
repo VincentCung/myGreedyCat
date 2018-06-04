@@ -1,0 +1,34 @@
+<!-- pages/resultList/resultList.wxml -->
+<view bind:confirm="searchInput" wx:if="{{keyword}}">
+    <search-bar cancel-color="#000" input-val="{{keyword}}" input-showed="{{true}}"></search-bar>
+</view>
+<view class="tab">
+    <view class="navbar">
+        <block wx:for="{{tabs}}" wx:key="*this">
+            <view data-index="{{index}}" class="navbar-item {{activeIndex == index ? 'navbar-item-on' : ''}}" bindtap="tabClick">
+                <view class="navbar-title">{{item}}</view>
+            </view>
+        </block>
+        <view class="navbar-slider" style="transform: translateX({{sliderOffset}}px);left:{{(750/tabs.length-180)/2}}rpx"></view>
+    </view>
+    <view class="tab-content">
+        <view class="tab-content-list" hidden="{{activeIndex != 0}}">
+            <view class="not-found-box">
+                <image class="not-found-image" wx:if="{{!maps.length}}" src="../../icons/404.png"></image>
+            </view>
+            <navigator wx:for="{{maps}}" wx:key="mapid"  url='{{"../mapDetail/mapDetail?mapid="+item.mapid}}'>
+                <map-item item-detail="{{item}}" />
+            </navigator>
+            <view wx:if="{{isEnd[0]}}" class="end-tip">猫咪真的找不到了~</view>
+        </view>
+        <view class="tab-content-list" hidden="{{activeIndex != 1}}">
+            <view class="not-found-box">
+                <image class="not-found-image" wx:if="{{!coordinates.length}}" src="../../icons/404.png"></image>
+            </view>
+            <navigator wx:for="{{coordinates}}" wx:key="id" url='{{"../shopDetail/shopDetail?id="+item.id}}'>
+                <coordinate-item item-detail="{{item}}" />
+            </navigator>
+            <view wx:if="{{isEnd[1]}}" class="end-tip">猫咪真的找不到了~</view>
+        </view>
+    </view>
+</view>

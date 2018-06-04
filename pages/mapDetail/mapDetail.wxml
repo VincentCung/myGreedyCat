@@ -1,0 +1,46 @@
+<!-- pages/mapDetail/mapDetail.wxml -->
+<view class="page-body">
+    <view class='map-warp'>
+        <map id='myMap' latitude="{{latitude}}" longitude="{{longitude}}" markers="{{markers}}"  show-location bindcallouttap='navigateToDetail' controls="{{controls}}" bindcontroltap='lockLocation'>
+        </map>
+
+    </view>
+    <view class="icon-wrap">
+        <view wx:for="{{icons}}" wx:for-item="icon" class="icon" wx:key='name'>
+            <image src="{{icon.isActive?icon.activeImageUrl:icon.inactiveImageUrl}} " class="icon-image" data-index="{{index}}" bindtap="iconTap"></image>
+            <view class="icon-num">{{icon.num}}</view>
+        </view>
+    </view>
+    <view class="description-wrap ui-cells">
+        <view class="description-locality">{{city+' '+locality}}</view>
+        <view class="description">
+            <text>{{description}}</text>
+        </view>
+        <view class="authorName">
+            <text>-- {{author.nickName}}</text>
+        </view>
+    </view>
+    <view class="comment-wrap">
+        <view class="ui-title-box">
+            <view class="ui-title-text">用户评论</view>
+            <image class='comment-btn' src='../../icons/ui/write.png' bindtap='newComment'></image>
+        </view>
+        <view class="comment-item" wx:for="{{comments}}" wx:for-item="comment" wx:key="id">
+            <view class="comment-head">
+                <image src="{{comment.simple_user_info.avatarUrl}}" class="comment-avatar"></image>
+                <view class="comment-userName">{{comment.simple_user_info.nickName}}</view>
+            </view>
+            <view class="comment-body">{{comment.content}}</view>
+        </view>
+    </view>
+    <view class="footbar">
+        <view class="footbar-item">
+            <image class="footbar-image" src="../../icons/ui/index.png"></image>
+            <navigator class="footbar-btn" open-type='switchTab' url='/pages/index/index'>首页</navigator>
+        </view>
+        <view class="footbar-item">
+            <image class="footbar-image" src="../../icons/ui/share.png"></image>
+            <button class="footbar-btn" open-type="share">分享</button>
+        </view>
+    </view>
+</view>
