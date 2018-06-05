@@ -34,6 +34,12 @@ Page({
                     latitude: res.latitude,
                     longitude: res.longitude
                 })
+                if(res.address&&res.name){
+                    that.setData({
+                        name:res.name,
+                        address:res.address,
+                    })
+                }
                 wx.showToast({
                     title: '选择成功',
                     icon:'success'
@@ -102,6 +108,7 @@ Page({
         wx.chooseImage({
             count: 1,
             success(res) {
+                console.log(res)
                 that.setData({
                     imagePath: res.tempFilePaths[0]
                 });

@@ -1,2 +1,6 @@
 <!--pages/help/help.wxml-->
-<text>这是帮助页</text>
+<swiper indicator-dots="true"  style="height:800rpx">
+    <swiper-item wx:for="{{imageUrls}}" wx:key="*this">
+        <image src="{{item}}" style="width:750rpx;height:800rpx" mode="aspectFit"/>
+    </swiper-item>
+</swiper>
