@@ -175,12 +175,6 @@ Page({
                 wx.hideLoading()
                 
                 wx.hideNavigationBarLoading()                    
-                wx.showModal({
-                    title: '提示',
-                    content: '可点击坐标点气泡查看觅食处详情',
-                    showCancel: false,
-                    confirmColor: "#EB6159"
-                })
 
             }, fail(error) {
                 util.showModel('网络错误', '请检查好网络后重试')
