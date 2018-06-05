@@ -38,7 +38,7 @@
         <view class='ui-cells'>
             <view class='ui-cell'>
                 <view class="ui-cell-body">
-                    <textarea name="description" placeholder='写下你的地图描述' auto-focus="true" style="height: 300rpx" maxlength="{{textareaMaxLen}}" bindinput="bindTextAreaChange" maxlength='{{textareaMaxLen}}' adjust-position="true" class='ui-textarea' value='{{description}}'/>
+                    <textarea name="description" placeholder='写下你的地图描述'  style="height: 300rpx" maxlength="{{textareaMaxLen}}" bindinput="bindTextAreaChange" maxlength='{{textareaMaxLen}}' adjust-position="true" class='ui-textarea' value='{{description}}'/>
                     <view class='ui-textarea-counter'>{{textareaLen}}/{{textareaMaxLen}}</view>
                 </view>
             </view>
