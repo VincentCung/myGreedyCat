@@ -34,9 +34,8 @@ Page({
                     latitude: res.latitude,
                     longitude: res.longitude
                 })
-                if(res.address&&res.name){
+                if(res.address){
                     that.setData({
-                        name:res.name,
                         address:res.address,
                     })
                 }
