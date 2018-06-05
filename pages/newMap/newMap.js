@@ -14,7 +14,7 @@ Page({
         description: '',
         isPublic: true,
         textareaLen: 0,
-        textareaMaxLen: 50,
+        textareaMaxLen: 100,
         tags: [{
                 tagName: "日韩料理",
                 isChoosed: false

@@ -19,7 +19,7 @@
         <view class="ui-cells-title">地点名</view>
         <view class="ui-cells ">
             <view class="ui-cell ui-cell-input">
-                <input name="name" class="ui-input" maxlength="10" placeholder="最大输入长度为10" value='{{name}}' />
+                <input name="name" class="ui-input" maxlength="30" placeholder="最大输入长度为30" value='{{name}}' />
             </view>
         </view>
 
@@ -31,7 +31,7 @@
         <view class="ui-cells-title">详细地址</view>
         <view class="ui-cells ">
             <view class="ui-cell ui-cell-input">
-                <input name="address" class="ui-input" maxlength="30" placeholder="最大输入长度为30" value='{{address}}' />
+                <input name="address" class="ui-input" maxlength="50" placeholder="最大输入长度为50" value='{{address}}' />
             </view>
         </view>
 

@@ -213,6 +213,10 @@ Page({
                     console.log(error)
                 }
             })
+        } else {
+            wx.setNavigationBarTitle({
+                title: '我的地图迷路了',
+            })
         }
     }
 

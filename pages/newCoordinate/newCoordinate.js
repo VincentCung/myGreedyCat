@@ -13,7 +13,7 @@ Page({
         oldPath: null,
 
         textareaLen: 0,
-        textareaMaxLen: 50,
+        textareaMaxLen: 100,
 
         latitude: 0,
         longitude: 0,
@@ -105,6 +105,7 @@ Page({
 
     chooseImage(e) {
         var that = this;
+        console.log(e)
         wx.chooseImage({
             count: 1,
             success(res) {

@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-      textareaMaxLen:30,
+      textareaMaxLen:50,
       textareaLen:0
   
   },
