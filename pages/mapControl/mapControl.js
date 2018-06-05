@@ -1,5 +1,6 @@
 // pages/mapControl/mapControl.js
 const config = require('../../config')
+const util = require('../../utils/util')
 const app = getApp();
 const defaultImage = '../../icons/lost.png'
 
@@ -33,6 +34,9 @@ Page({
                 console.log(data)
                 wx.hideNavigationBarLoading()
                 wx.hideLoading()
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
         })
     },
@@ -52,6 +56,9 @@ Page({
                 data:{
                     mapid,
                     main_image_url
+                }, fail(error) {
+                    util.showModel('网络错误', '请检查好网络后重试')
+                    console.log(error)
                 }
             })
         }
@@ -108,6 +115,9 @@ Page({
                     icon: 'success',
                     title: '删除成功',
                 })
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
         })
         let { configList, imageList, coordinates } = this.data  //删除组件外的list
@@ -154,6 +164,9 @@ Page({
                                     icon: 'success',
                                     title: '切换成功',
                                 })
+                            }, fail(error) {
+                                util.showModel('网络错误', '请检查好网络后重试')
+                                console.log(error)
                             }
                         })
                     }
@@ -193,6 +206,9 @@ Page({
                             }
                             wx.navigateBack({
                             })
+                        }, fail(error) {
+                            util.showModel('网络错误', '请检查好网络后重试')
+                            console.log(error)
                         }
                     })
                 }

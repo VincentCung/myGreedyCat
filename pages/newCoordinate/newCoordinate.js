@@ -3,6 +3,7 @@
 const config = require('../../config')
 const util = require('../../utils/util.js')
 
+
 Page({
 
     data: {
@@ -124,6 +125,9 @@ Page({
                 let rawData = res.data.data.coordinate
                 let data = that._dataProcess(rawData)
                 that.setData(data)
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
         })
     },
@@ -235,6 +239,9 @@ Page({
                 wx.navigateBack({
 
                 })
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
         })
     }

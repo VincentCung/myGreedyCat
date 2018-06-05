@@ -1,6 +1,7 @@
 // pages/myMaps/myMaps.js
 const config = require('../../config')
 const app = getApp()
+const util = require('../../utils/util')
 Page({
 
     data: {
@@ -29,6 +30,9 @@ Page({
                 if (e.detail.itemId == app.data.mainMapId) {
                     app.data.mainMapId = null
                 }
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
         })
         let configList = this.data.configList  //删除组件外的list
@@ -62,6 +66,9 @@ Page({
                     mapList: res.data.data.maps
                 })
                 wx.hideLoading()
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
 
         })
@@ -94,6 +101,9 @@ Page({
             success(){
                 wx.navigateBack({})
                 app.data.mainMapId = e.target.dataset.id
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
         })
     }

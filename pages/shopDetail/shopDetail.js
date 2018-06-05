@@ -1,5 +1,6 @@
 // pages/shopDetail/shopDetail.js
 const config = require('../../config')
+const util = require('../../utils/util')
 Page({
 
     /**
@@ -40,6 +41,9 @@ Page({
                     imageUrl: rawData.main_image_url,
                     category:rawData.category
                 })
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
         })
     },

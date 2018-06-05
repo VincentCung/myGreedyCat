@@ -2,6 +2,7 @@
 
 const config = require('../../config')
 const app = getApp()
+const util = require('../../utils/util')
 Page({
 
     data: {
@@ -28,6 +29,9 @@ Page({
                     commentList
                 })
                 wx.hideLoading()
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
 
         })
@@ -45,6 +49,9 @@ Page({
                     icon: 'success',
                     title: '删除成功',
                 })
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
         })
         let configList = this.data.configList  //删除组件外的list

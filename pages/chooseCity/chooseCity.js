@@ -1,6 +1,7 @@
 // pages/chooseCity/chooseCity.js
 
 const map = require('../../vendor/qqmap-wx-jssdk.min.js')
+const util = require('../../utils/util')
 
 const app = getApp()
 
@@ -24,16 +25,17 @@ Page({
                 })
             }
         })
+        wx.showLoading({
+            title: '加载城市列表中',
+            mask: true
+        })
         mapsdk.getCityList({
             success(res){
-                that._cityProcess(res.result)
-                wx.hideLoading()
-            }
+                    that._cityProcess(res.result)
+                    wx.hideLoading()
+            },
         })
-        wx.showLoading({
-            title:'加载城市列表中',
-            mask:true
-        })
+
         
     },
 

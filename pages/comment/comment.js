@@ -1,5 +1,6 @@
 // pages/comment/comment.js
 const config = require('../../config')
+const util = require('../../utils/util')
 Page({
 
   /**
@@ -34,6 +35,9 @@ Page({
               wx.navigateBack({
                   delta: 1
               })
+          },fail(error) {
+              util.showModel('网络错误', '请检查好网络后重试')
+              console.log(error)
           }
       })
   },

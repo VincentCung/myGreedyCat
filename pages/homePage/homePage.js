@@ -16,7 +16,7 @@ Page({
             { name: "收藏地图", linkUrl: "/pages/myMaps/myMaps?choice=1", iconSrc: iconPath + 'collect.png' },
         ],
         otherList: [
-            { name: "帮助", linkUrl: "#", iconSrc: iconPath + 'help.png' }
+            { name: "帮助", linkUrl: "/pages/help/help", iconSrc: iconPath + 'help.png' }
         ],
         modalHidden: true
     },

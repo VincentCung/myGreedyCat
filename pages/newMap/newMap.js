@@ -1,6 +1,7 @@
 // pages/newMap/newMap.js
 
 const config = require('../../config')
+const util = require('../../utils/util')
 const app = getApp()
 Page({
     /**
@@ -132,6 +133,9 @@ Page({
                 let rawData = res.data.data.map
                 let data = that._dataProcess(rawData)
                 that.setData(data)
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
         })
     },
@@ -229,6 +233,9 @@ Page({
                         
                     })
                 }
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
         })
     

@@ -1,5 +1,6 @@
 // pages/mapDetail/mapDetail.js
 const config = require('../../config');
+const util = require('../../utils/util')
 const app = getApp();
 Page({
 
@@ -53,6 +54,9 @@ Page({
                 data,
                 success: function (res) {
                     that._showAdmirationTip(e.currentTarget.dataset.index)
+                }, fail(error) {
+                    util.showModel('网络错误', '请检查好网络后重试')
+                    console.log(error)
                 }
             })
         } else if (!app.data.userAuthory) { //未授权登录
@@ -137,6 +141,9 @@ Page({
                 that.setData({
                     comments
                 })
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
         })
 
@@ -175,6 +182,9 @@ Page({
                     confirmColor: "#EB6159"
                 })
 
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
         })
 

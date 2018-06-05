@@ -154,6 +154,9 @@ Page({
                 }
                 that.setData(maps)
 
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
         })
     },

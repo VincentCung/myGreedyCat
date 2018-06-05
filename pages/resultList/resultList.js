@@ -1,6 +1,7 @@
 // pages/resultList/resultList.js
 
 const config = require('../../config')
+const util = require('../../utils/util')
 Page({
 
     data: {
@@ -84,6 +85,9 @@ Page({
                 that.setData(result)
                 wx.hideNavigationBarLoading()
                 wx.hideLoading()
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
         })
     },
@@ -112,6 +116,9 @@ Page({
                 that.setData(result)
                 wx.hideNavigationBarLoading()
                 wx.hideLoading()
+            }, fail(error) {
+                util.showModel('网络错误', '请检查好网络后重试')
+                console.log(error)
             }
         })
     },
