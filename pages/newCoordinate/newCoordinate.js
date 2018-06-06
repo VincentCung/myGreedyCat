@@ -180,6 +180,7 @@ Page({
         let that = this
         wx.showLoading({
             title: '发送中',
+            mask: true
         })
         if (this.data.oldPath != this.data.imagePath) {
             let filePath = this.data.imagePath

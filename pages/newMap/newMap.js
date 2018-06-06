@@ -77,7 +77,10 @@ Page({
                 confirmColor: '#EB6159'
             })
         } else {
-
+            wx.showLoading({
+                title: '发送中',
+                mask:true
+            })
             if (this.data.mapid) {
                 this._updateRequest(e.detail.value)
             } else {
@@ -223,7 +226,7 @@ Page({
             method,
             data,
             success(res) {
-                console.log(res)
+                wx.hideLoading()
                 if(choice==0) {
                     wx.redirectTo({
                         url: '/pages/mapControl/mapControl?mapid=' + res.data.data.mapid,
@@ -234,6 +237,7 @@ Page({
                     })
                 }
             }, fail(error) {
+                wx.hideLoading()
                 util.showModel('网络错误', '请检查好网络后重试')
                 console.log(error)
             }
