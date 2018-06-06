@@ -13,11 +13,11 @@ Page({
         }, {
             title: '管理我的地图',
             imageUrl: "https://qcloudtest-1256677430.cos.ap-guangzhou.myqcloud.com/imagetest/1528273839227-BkP2sMreX.png",
-            description: '在地图管理仲选中使用当前地图方可开始使用'
+            description: "'我的地图'选中地图并进入管理页后，轻点'使用当前地图'即可开始使用"
         }, {
             title: '使用我的地图',
             imageUrl: "https://qcloudtest-1256677430.cos.ap-guangzhou.myqcloud.com/imagetest/1528273890644-H1jk2MHeX.png",
-            description: '点击右下按钮，发现更多使用技巧哦！'
+            description: '使用中的地图页，点击右下按钮，发现更多使用技巧哦！'
         }]
     }
 })
