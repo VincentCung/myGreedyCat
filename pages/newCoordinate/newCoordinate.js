@@ -109,9 +109,14 @@ Page({
             count: 1,
             success(res) {
                 console.log(res)
-                that.setData({
-                    imagePath: res.tempFilePaths[0]
-                });
+                if(res.tempFiles[0].size<1048576){
+                    that.setData({
+                        imagePath: res.tempFilePaths[0]
+                    });
+                } else {
+                    util.showModel('上传失败', '图片大小超过限制')
+                }
+
             }
         })
     },
@@ -173,6 +178,9 @@ Page({
             category: categories[rawData.categoryIndex]
         }
         let that = this
+        wx.showLoading({
+            title: '发送中',
+        })
         if (this.data.oldPath != this.data.imagePath) {
             let filePath = this.data.imagePath
             wx.uploadFile({
@@ -243,10 +251,12 @@ Page({
             method,
             data,
             success() {
+                wx.hideLoading()
                 wx.navigateBack({
 
                 })
             }, fail(error) {
+                wx.hideLoading()
                 util.showModel('网络错误', '请检查好网络后重试')
                 console.log(error)
             }

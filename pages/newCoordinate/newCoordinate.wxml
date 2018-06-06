@@ -48,7 +48,7 @@
         </view>
 
 
-        <view class='ui-cells-title'>图片上传 {{imagePath?1:0}}/1</view>
+        <view class='ui-cells-title'>图片上传 图片大小上限为1M {{imagePath?1:0}}/1</view>
         <view class='ui-cells'>
             <view class='ui-cell'>
                 <view class='ui-cell-body'>

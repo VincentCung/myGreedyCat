@@ -1,7 +1,7 @@
 <!--pages/help/help.wxml-->
 <swiper indicator-dots="true" style="height:1200rpx">
     <swiper-item wx:for='{{helpList}}' wx:key='title'>
-        <image src="{{path+item.id+'.png'}}" class='help-image' mode="aspectFit" />
+        <image src="{{item.imageUrl}}" class='help-image' mode="aspectFit" />
         <view class='help-wrap'>
             <view class='help-title'>{{item.title}}</view>
             <text class='help-text'>{{item.description}}</text>
