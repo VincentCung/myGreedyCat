@@ -1,6 +1,10 @@
 <!--pages/help/help.wxml-->
-<swiper indicator-dots="true"  style="height:800rpx">
-    <swiper-item wx:for="{{imageUrls}}" wx:key="*this">
-        <image src="{{item}}" style="width:750rpx;height:800rpx" mode="aspectFit"/>
+<swiper indicator-dots="true" style="height:1200rpx">
+    <swiper-item wx:for='{{helpList}}' wx:key='title'>
+        <image src="{{path+item.id+'.png'}}" class='help-image' mode="aspectFit" />
+        <view class='help-wrap'>
+            <view class='help-title'>{{item.title}}</view>
+            <text class='help-text'>{{item.description}}</text>
+        </view>
     </swiper-item>
 </swiper>
