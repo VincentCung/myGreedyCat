@@ -5,7 +5,7 @@
     <view class='ui-cells'>
         <view class='ui-cell'>
             <view class='ui-cell-body'>
-                <textarea name="comment" placeholder='写下你的描述' auto-focus="true" style="height: 200rpx" maxlength="{{textareaMaxLen}}" bindinput="bindTextAreaChange" adjust-position="true" class='ui-textarea' />
+                <textarea name="content" placeholder='写下你的描述' auto-focus="true" style="height: 200rpx" maxlength="{{textareaMaxLen}}" bindinput="bindTextAreaChange" adjust-position="true" class='ui-textarea' />
                 <view class='ui-textarea-counter'>{{textareaLen}}/{{textareaMaxLen}}</view>
             </view>
             

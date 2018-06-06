@@ -70,12 +70,7 @@ Page({
         let newMap = e.detail.value
         console.log(newMap)
         if (newMap.mapName == '') {
-            wx.showModal({
-                title: '提示',
-                content: '地图名不能为空',
-                showCancel: false,
-                confirmColor: '#EB6159'
-            })
+            util.showModel('提示','地图名不能为空')
         } else {
             wx.showLoading({
                 title: '发送中',

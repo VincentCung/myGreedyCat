@@ -57,12 +57,7 @@ Page({
     //页面提交事件
     formSubmit(e) {
         if (e.detail.value.name == '') {
-            wx.showModal({
-                title: '提示',
-                content: '觅食处不能没有名字哦',
-                showCancel: false,
-                confirmColor: '#EB6159'
-            })
+            util.showModel('提示','觅食处不能没有名字哦')
         } else {
             if (this.options.id) {
                 this._updateRequest(e.detail.value)

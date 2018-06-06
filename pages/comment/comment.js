@@ -19,27 +19,31 @@ Page({
   formSubmit: function (e) {
       let that=this;
       let value = e.detail.value;
-      let comment_data={
-          content: value.comment,
-          is_public: !value.isPublic,
-          mapid: that.options.mapid,
-          open_id: getApp().data.userInfo.openId
-      }
-        console.log(comment_data)
-      wx.request({
-          url: config.service.host + "/user/comment",
-          method: "POST",
-          data: comment_data,
-          success: function (res) {
-              console.log(res)
-              wx.navigateBack({
-                  delta: 1
-              })
-          },fail(error) {
-              util.showModel('网络错误', '请检查好网络后重试')
-              console.log(error)
+      if(value.content) {
+          let comment_data = {
+              content: value.content,
+              is_public: !value.isPublic,
+              mapid: that.options.mapid,
+              open_id: getApp().data.userInfo.openId
           }
-      })
+          console.log(comment_data)
+          wx.request({
+              url: config.service.host + "/user/comment",
+              method: "POST",
+              data: comment_data,
+              success: function (res) {
+                  console.log(res)
+                  wx.navigateBack({
+                      delta: 1
+                  })
+              }, fail(error) {
+                  util.showModel('网络错误', '请检查好网络后重试')
+                  console.log(error)
+              }
+          })
+      } else {
+          util.showModel('提示','评论不能为空')
+      }
   },
 
 })
