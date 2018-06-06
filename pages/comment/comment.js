@@ -27,6 +27,10 @@ Page({
               open_id: getApp().data.userInfo.openId
           }
           console.log(comment_data)
+          wx.showLoading({
+              title: '发送中',
+              mask:true
+          })
           wx.request({
               url: config.service.host + "/user/comment",
               method: "POST",
@@ -39,6 +43,7 @@ Page({
               }, fail(error) {
                   util.showModel('网络错误', '请检查好网络后重试')
                   console.log(error)
+                  wx.hideLoading()
               }
           })
       } else {
