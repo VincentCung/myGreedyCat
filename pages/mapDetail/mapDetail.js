@@ -275,15 +275,6 @@ Page({
 })
 
 function changeToMaker(coordinates) {
-    let callout = {
-        content: '我是这个气泡',
-        display: "ALWAYS",
-        fontSize: 12,
-        color: '#ffffff',
-        bgColor: '#000000',
-        padding: 8,
-        borderRadius: 4,
-    };
     let iconPath = "../../icons/location.png";
     let width = 40;
     let height = 40;
@@ -292,7 +283,15 @@ function changeToMaker(coordinates) {
         marker.width = width;
         marker.height = height;
         marker.title = marker.name;
-        marker.callout = callout;
+        marker.callout = {
+            content: '我是这个气泡',
+            display: "ALWAYS",
+            fontSize: 12,
+            color: '#ffffff',
+            bgColor: '#000000',
+            padding: 8,
+            borderRadius: 4,
+        };
         marker.callout.content = marker.name;
         delete marker.name;
         return marker;
